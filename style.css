@@ -45,9 +45,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    padding: 2rem 1rem;
+    gap: 0.5rem;
 }
 
 .bg-hearts {
@@ -91,10 +94,11 @@ body {
 
 .page-header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     z-index: 10;
     position: relative;
     animation: fadeInDown 1s ease-out;
+    flex-shrink: 0;
 }
 
 .page-header h1 {
@@ -251,7 +255,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2.5rem 2rem;
+    padding: 1.8rem 1.5rem;
     overflow: hidden;
     border: 2px solid rgba(233, 30, 99, 0.1);
 }
@@ -270,20 +274,26 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.6rem;
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto;
 }
 
 .card-inner .card-emoji-top {
-    font-size: 3rem;
+    font-size: 2.5rem;
     animation: bounce 2s ease-in-out infinite;
+    flex-shrink: 0;
 }
 
 .card-inner .card-title {
     font-family: var(--font-cursive);
-    font-size: 2.2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: var(--pink-dark);
-    line-height: 1.3;
+    line-height: 1.2;
+    flex-shrink: 0;
+    word-break: break-word;
 }
 
 .card-inner .card-divider {
@@ -305,11 +315,12 @@ body {
 
 .card-inner .card-message {
     font-family: var(--font-thai);
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 300;
     color: #555;
-    line-height: 1.8;
-    max-width: 300px;
+    line-height: 1.7;
+    max-width: 280px;
+    flex-shrink: 0;
 }
 
 .card-inner .card-message strong {
@@ -319,9 +330,10 @@ body {
 
 .card-inner .card-signature {
     font-family: var(--font-cursive);
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     color: var(--rose);
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
+    flex-shrink: 0;
 }
 
 .card-inner .card-emoji-bottom {
@@ -504,8 +516,9 @@ body {
 }
 
 .page-footer {
-    position: fixed;
-    bottom: 1rem;
+    position: relative;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
     text-align: center;
     z-index: 10;
     font-family: var(--font-thai);
@@ -513,6 +526,7 @@ body {
     font-weight: 300;
     color: rgba(233, 30, 99, 0.5);
     letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
 .page-footer .footer-hearts {
@@ -592,16 +606,20 @@ body {
 }
 
 @media (max-width: 480px) {
+    body {
+        padding: 1.5rem 0.8rem;
+    }
+
     .page-header h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .page-header .subtitle {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
 
     .envelope-wrapper {
-        width: 320px;
+        width: min(320px, 90vw);
         height: 420px;
     }
 
@@ -613,13 +631,26 @@ body {
         font-size: 1.4rem;
     }
 
+    .card-inner .card-emoji-top {
+        font-size: 2rem;
+    }
+
     .card-inner .card-title {
-        font-size: 1.8rem;
+        font-size: 1.4rem;
     }
 
     .card-inner .card-message {
-        font-size: 0.95rem;
-        max-width: 250px;
+        font-size: 0.85rem;
+        max-width: 230px;
+        line-height: 1.6;
+    }
+
+    .card-inner .card-signature {
+        font-size: 1rem;
+    }
+
+    .card-inner .card-emoji-bottom {
+        font-size: 1.2rem;
     }
 
     .btn-valentine {
@@ -630,15 +661,37 @@ body {
 
 @media (max-width: 360px) {
     .envelope-wrapper {
-        width: 280px;
+        width: min(280px, 88vw);
         height: 380px;
     }
 
     .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .card-inner {
+        gap: 0.4rem;
+    }
+
+    .card-inner .card-emoji-top {
         font-size: 1.8rem;
     }
 
     .card-inner .card-title {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .card-inner .card-message {
+        font-size: 0.8rem;
+        max-width: 200px;
+        line-height: 1.5;
+    }
+
+    .card-inner .card-signature {
+        font-size: 0.9rem;
+    }
+
+    .envelope-back {
+        padding: 1.5rem 1rem;
     }
 }
