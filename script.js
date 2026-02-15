@@ -461,8 +461,9 @@ function createConfettiHearts() {
 // กดซองจดหมายเพื่อเปิด/ปิด
 envelopeWrapper.addEventListener('click', toggleCard);
 
-// กดปุ่มเปิด/ปิด
-btnToggle.addEventListener('click', function () {
+// กดปุ่มเปิด/ปิด (stopPropagation ป้องกัน bubble ถ้า layout เปลี่ยน)
+btnToggle.addEventListener('click', function (e) {
+    e.stopPropagation();
     toggleCard();
 });
 
