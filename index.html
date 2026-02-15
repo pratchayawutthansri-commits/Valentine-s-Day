@@ -6,17 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="การ์ดวาเลนไทน์ออนไลน์ — สุ่มเปิดการ์ดมอบความรักให้คนพิเศษของคุณ 💕">
 
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="💕 Happy Valentine's Day — สุ่มเปิดการ์ดรัก">
+    <meta property="og:description" content="สุ่มเปิดการ์ดรัก มอบให้คนพิเศษ 💕 เลือกการ์ดน่ารัก 12 แบบ">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="th_TH">
+
     <title>💕 Happy Valentine's Day — สุ่มเปิดการ์ดรัก</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>">
+
+    <!-- Google Fonts (ลดเหลือเฉพาะ weights ที่ใช้จริง) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="bg-hearts" id="bgHearts"></div>
+    <div class="bg-hearts" id="bgHearts" aria-hidden="true"></div>
 
     <header class="page-header">
-        <h1>Happy Valentine's Day</h1>
+        <h1 lang="en">Happy Valentine's Day</h1>
         <p class="subtitle">💕 สุ่มเปิดการ์ดรัก มอบให้คนพิเศษ 💕</p>
     </header>
 
@@ -24,25 +41,25 @@
 
         <!-- ป้ายจำนวนการ์ด -->
         <div class="card-counter" id="cardCounter">
-            <span class="counter-icon">🎴</span>
+            <span class="counter-icon" aria-hidden="true">🎴</span>
             <span class="counter-text" id="counterText">การ์ด 1 / 12</span>
         </div>
 
-        <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope-wrapper" id="envelopeWrapper" role="button" tabindex="0" aria-label="แตะเพื่อเปิดการ์ด">
             <div class="envelope" id="envelope">
 
                 <!-- ===== ด้านหน้าซอง (Envelope Front) ===== -->
                 <div class="envelope-front" id="envelopeFront">
 
                     <!-- ดอกไม้มุมซอง -->
-                    <span class="corner-decor top-left" id="cornerTL">🌸</span>
-                    <span class="corner-decor top-right" id="cornerTR">🌷</span>
-                    <span class="corner-decor bottom-left" id="cornerBL">🌷</span>
-                    <span class="corner-decor bottom-right" id="cornerBR">🌸</span>
+                    <span class="corner-decor top-left" id="cornerTL" aria-hidden="true">🌸</span>
+                    <span class="corner-decor top-right" id="cornerTR" aria-hidden="true">🌷</span>
+                    <span class="corner-decor bottom-left" id="cornerBL" aria-hidden="true">🌷</span>
+                    <span class="corner-decor bottom-right" id="cornerBR" aria-hidden="true">🌸</span>
 
                     <!-- เนื้อหาซอง -->
-                    <div class="envelope-heart" id="envelopeEmoji">💌</div>
-                    <p class="envelope-label" id="envelopeLabel">For You</p>
+                    <div class="envelope-heart" id="envelopeEmoji" aria-hidden="true">💌</div>
+                    <p class="envelope-label" id="envelopeLabel" lang="en">For You</p>
                     <p class="envelope-hint">แตะเพื่อเปิดการ์ด ✨</p>
                 </div>
 
@@ -52,13 +69,13 @@
                     <div class="card-inner">
 
                         <!-- อีโมจิด้านบน -->
-                        <div class="card-emoji-top" id="cardEmojiTop">🌹</div>
+                        <div class="card-emoji-top" id="cardEmojiTop" aria-hidden="true">🌹</div>
 
                         <!-- หัวข้อการ์ด -->
-                        <h2 class="card-title" id="cardTitle">Happy Valentine's Day</h2>
+                        <h2 class="card-title" id="cardTitle" lang="en">Happy Valentine's Day</h2>
 
                         <!-- เส้นคั่น -->
-                        <div class="card-divider" id="cardDivider">💗</div>
+                        <div class="card-divider" id="cardDivider" aria-hidden="true">💗</div>
 
                         <!-- ข้อความน่ารัก -->
                         <p class="card-message" id="cardMessage">
@@ -69,10 +86,10 @@
                         </p>
 
                         <!-- ลายเซ็น -->
-                        <p class="card-signature" id="cardSignature">With Love ❤️</p>
+                        <p class="card-signature" id="cardSignature" lang="en">With Love ❤️</p>
 
                         <!-- อีโมจิด้านล่าง -->
-                        <div class="card-emoji-bottom" id="cardEmojiBottom">
+                        <div class="card-emoji-bottom" id="cardEmojiBottom" aria-hidden="true">
                             <span>🌸</span>
                             <span>💖</span>
                             <span>🌸</span>
@@ -88,478 +105,27 @@
         <div class="btn-group">
 
             <!-- ปุ่มเปิด/ปิดการ์ด -->
-            <button class="btn-valentine" id="btnToggle">
-                <span class="btn-icon">💌</span>
+            <button class="btn-valentine" id="btnToggle" aria-label="เปิดการ์ด">
+                <span class="btn-icon" aria-hidden="true">💌</span>
                 <span class="btn-text">เปิดการ์ด</span>
             </button>
 
             <!-- ปุ่มสุ่มการ์ดใหม่ -->
-            <button class="btn-valentine btn-shuffle" id="btnShuffle">
-                <span class="btn-icon">🔀</span>
+            <button class="btn-valentine btn-shuffle" id="btnShuffle" aria-label="สุ่มการ์ดใหม่">
+                <span class="btn-icon" aria-hidden="true">🔀</span>
                 <span class="btn-text">สุ่มการ์ดใหม่</span>
             </button>
 
         </div>
     </main>
 
-    <div class="sparkle-container" id="sparkleContainer"></div>
+    <div class="sparkle-container" id="sparkleContainer" aria-hidden="true"></div>
     <footer class="page-footer">
         <p>Made with ❤️ — Valentine's Day 2026</p>
-        <p class="footer-hearts">♥ ♥ ♥ ♥ ♥</p>
+        <p class="footer-hearts" aria-hidden="true">♥ ♥ ♥ ♥ ♥</p>
     </footer>
 
-    <script>
-
-        const cardCollection = [
-            {
-                // การ์ดที่ 1: คลาสสิก — กุหลาบแดง
-                envelopeEmoji: '💌',
-                envelopeLabel: 'For You',
-                corners: ['🌸', '🌷', '🌷', '🌸'],
-                emojiTop: '🌹',
-                title: 'Happy Valentine\'s Day',
-                divider: '💗',
-                message: 'สุขสันต์วันวาเลนไทน์นะ 🥰<br>' +
-                    'ขอให้วันนี้เป็นวันที่<strong>เต็มไปด้วยรัก</strong><br>' +
-                    'ไม่ว่าจะอยู่ที่ไหน ขอให้มีความสุข<br>' +
-                    'และรู้ไว้ว่า... <strong>คุณเป็นคนพิเศษเสมอ</strong> 💕',
-                signature: 'With Love ❤️',
-                emojiBottom: ['🌸', '💖', '🌸'],
-                bgColor: '',  // ใช้สีเริ่มต้น
-                accentColor: ''
-            },
-            {
-                // การ์ดที่ 2: น่ารัก — หมีกอด
-                envelopeEmoji: '🧸',
-                envelopeLabel: 'Hug Me',
-                corners: ['🎀', '💝', '💝', '🎀'],
-                emojiTop: '🤗',
-                title: 'Sending Hugs!',
-                divider: '🧸',
-                message: 'ส่งกอดอุ่นๆ ให้นะ 🤗<br>' +
-                    'ถึงจะ<strong>ไม่ได้อยู่ใกล้กัน</strong><br>' +
-                    'แต่หัวใจอยู่ข้างเธอเสมอนะ<br>' +
-                    '<strong>กอดแน่นๆ จากใจ</strong> 💕',
-                signature: 'Hugs & Kisses 💋',
-                emojiBottom: ['🎀', '🧸', '🎀'],
-                bgColor: 'linear-gradient(145deg, #fff8e1 0%, #ffe0b2 100%)',
-                accentColor: '#ff8f00'
-            },
-            {
-                // การ์ดที่ 3: หวานละมุน — ช็อกโกแลต
-                envelopeEmoji: '🍫',
-                envelopeLabel: 'Sweet Love',
-                corners: ['🍬', '🍭', '🍭', '🍬'],
-                emojiTop: '🍫',
-                title: 'You\'re So Sweet!',
-                divider: '🍩',
-                message: 'เธอหวานกว่าช็อกโกแลตอีก 🍫<br>' +
-                    'มีเธออยู่ข้างๆ <strong>ชีวิตก็หวานขึ้น</strong><br>' +
-                    'ขอบคุณที่ทำให้ทุกวัน<br>' +
-                    '<strong>อร่อยเหมือนขนมหวาน</strong> 🧁',
-                signature: 'Your Sweetie 🍬',
-                emojiBottom: ['🍰', '🍫', '🍰'],
-                bgColor: 'linear-gradient(145deg, #efebe9 0%, #d7ccc8 100%)',
-                accentColor: '#6d4c41'
-            },
-            {
-                // การ์ดที่ 4: โรแมนติก — แสงดาว
-                envelopeEmoji: '🌙',
-                envelopeLabel: 'My Star',
-                corners: ['⭐', '🌟', '🌟', '⭐'],
-                emojiTop: '🌙',
-                title: 'You Light Up My World',
-                divider: '✨',
-                message: 'เธอเป็นดวงดาวที่สว่างที่สุด 🌟<br>' +
-                    'ในคืนที่<strong>มืดมิดที่สุด</strong><br>' +
-                    'เธอทำให้โลกของฉัน<br>' +
-                    '<strong>สว่างไสวเสมอ</strong> ✨',
-                signature: 'Your Moonlight 🌙',
-                emojiBottom: ['⭐', '🌙', '⭐'],
-                bgColor: 'linear-gradient(145deg, #e8eaf6 0%, #c5cae9 100%)',
-                accentColor: '#3f51b5'
-            },
-            {
-                // การ์ดที่ 5: สดใส — ดอกทานตะวัน
-                envelopeEmoji: '🌻',
-                envelopeLabel: 'Sunshine',
-                corners: ['☀️', '🌼', '🌼', '☀️'],
-                emojiTop: '🌻',
-                title: 'You Are My Sunshine',
-                divider: '☀️',
-                message: 'เธอเป็นแสงแดดของฉัน 🌞<br>' +
-                    'ทำให้<strong>ทุกวันสดใส</strong><br>' +
-                    'ยิ้มของเธอทำให้ฉัน<br>' +
-                    '<strong>อบอุ่นหัวใจทุกครั้ง</strong> 🌈',
-                signature: 'Your Sunshine ☀️',
-                emojiBottom: ['🌼', '🌻', '🌼'],
-                bgColor: 'linear-gradient(145deg, #fffde7 0%, #fff9c4 100%)',
-                accentColor: '#f9a825'
-            },
-            {
-                // การ์ดที่ 6: อบอุ่น — กาแฟยามเช้า
-                envelopeEmoji: '☕',
-                envelopeLabel: 'My Cup',
-                corners: ['🫖', '🧁', '🧁', '🫖'],
-                emojiTop: '☕',
-                title: 'You Warm My Heart',
-                divider: '🫖',
-                message: 'เธอเหมือนกาแฟยามเช้า ☕<br>' +
-                    'ที่<strong>ปลุกหัวใจให้ตื่น</strong>ทุกวัน<br>' +
-                    'ขอให้เราอบอุ่นด้วยกัน<br>' +
-                    '<strong>ไปนานๆ นะ</strong> 🥰',
-                signature: 'With Warmth ☕',
-                emojiBottom: ['🧁', '☕', '🧁'],
-                bgColor: 'linear-gradient(145deg, #fbe9e7 0%, #ffccbc 100%)',
-                accentColor: '#bf360c'
-            },
-            {
-                // การ์ดที่ 7: ฝันหวาน — ผีเสื้อ
-                envelopeEmoji: '🦋',
-                envelopeLabel: 'Dream',
-                corners: ['🌺', '🦋', '🦋', '🌺'],
-                emojiTop: '🦋',
-                title: 'You Give Me Butterflies',
-                divider: '🌺',
-                message: 'ทุกครั้งที่เจอเธอ 🦋<br>' +
-                    'ผีเสื้อในท้อง<strong>ก็บินว่อนไปหมด</strong><br>' +
-                    'หัวใจเต้นแรง ใจสั่น<br>' +
-                    '<strong>เพราะมีเธอทำให้ตื่นเต้น</strong> 💓',
-                signature: 'Yours Flutter 🦋',
-                emojiBottom: ['🌺', '🦋', '🌺'],
-                bgColor: 'linear-gradient(145deg, #f3e5f5 0%, #e1bee7 100%)',
-                accentColor: '#9c27b0'
-            },
-            {
-                // การ์ดที่ 8: ใสซื่อ — กระต่ายน้อย
-                envelopeEmoji: '🐰',
-                envelopeLabel: 'Bunny',
-                corners: ['🥕', '🐾', '🐾', '🥕'],
-                emojiTop: '🐰',
-                title: 'Some Bunny Loves You!',
-                divider: '🐾',
-                message: 'รู้มั้ย… มีกระต่ายตัวหนึ่ง 🐰<br>' +
-                    'ที่<strong>รักเธอมากๆ</strong> เลย<br>' +
-                    'อยากกระโดดไปกอดเธอ<br>' +
-                    '<strong>แบบไม่ยอมปล่อย</strong> 🥰',
-                signature: 'Your Bunny 🐰',
-                emojiBottom: ['🥕', '🐰', '🥕'],
-                bgColor: 'linear-gradient(145deg, #fce4ec 0%, #f8bbd0 100%)',
-                accentColor: '#ec407a'
-            },
-            {
-                // การ์ดที่ 9: มินิมอล — หัวใจเรียบง่าย
-                envelopeEmoji: '❤️',
-                envelopeLabel: 'Love',
-                corners: ['♥', '♥', '♥', '♥'],
-                emojiTop: '❤️',
-                title: 'I Love You',
-                divider: '❤️',
-                message: 'ไม่ต้องมีคำพูดมากมาย 💭<br>' +
-                    'แค่อยากบอกว่า...<br>' +
-                    '<strong>รักเธอนะ</strong><br>' +
-                    'วันนี้ พรุ่งนี้ <strong>และตลอดไป</strong> ❤️',
-                signature: 'Always & Forever ♾️',
-                emojiBottom: ['❤️', '❤️', '❤️'],
-                bgColor: 'linear-gradient(145deg, #ffffff 0%, #ffebee 100%)',
-                accentColor: '#c62828'
-            },
-            {
-                // การ์ดที่ 10: สดใส — สายรุ้ง
-                envelopeEmoji: '🌈',
-                envelopeLabel: 'Rainbow',
-                corners: ['🎨', '🎈', '🎈', '🎨'],
-                emojiTop: '🌈',
-                title: 'You Color My World',
-                divider: '🎨',
-                message: 'เธอทำให้โลกฉันมีสีสัน 🎨<br>' +
-                    'เหมือน<strong>สายรุ้งหลังฝน</strong><br>' +
-                    'ทุกสีสวยงาม ทุกวันสดใส<br>' +
-                    '<strong>เพราะมีเธออยู่ข้างกัน</strong> 🌈',
-                signature: 'Colorfully Yours 🎨',
-                emojiBottom: ['🎈', '🌈', '🎈'],
-                bgColor: 'linear-gradient(145deg, #e8f5e9 0%, #c8e6c9 100%)',
-                accentColor: '#2e7d32'
-            },
-            {
-                // การ์ดที่ 11: เทพนิยาย — เจ้าหญิง
-                envelopeEmoji: '👑',
-                envelopeLabel: 'My Queen',
-                corners: ['💎', '👑', '👑', '💎'],
-                emojiTop: '👑',
-                title: 'You\'re My Everything',
-                divider: '💎',
-                message: 'ในสายตาฉัน 👑<br>' +
-                    'เธอเป็น<strong>ราชินีของหัวใจ</strong><br>' +
-                    'สวยงาม เปล่งประกาย<br>' +
-                    '<strong>ล้ำค่ากว่าเพชรใดๆ</strong> 💎',
-                signature: 'Your King 👑',
-                emojiBottom: ['💎', '👑', '💎'],
-                bgColor: 'linear-gradient(145deg, #fff8e1 0%, #ffecb3 100%)',
-                accentColor: '#ff8f00'
-            },
-            {
-                // การ์ดที่ 12: ซุกซน — น่ารักแกล้ง
-                envelopeEmoji: '😜',
-                envelopeLabel: 'Hey You!',
-                corners: ['🎉', '🎊', '🎊', '🎉'],
-                emojiTop: '😘',
-                title: 'Guess What?',
-                divider: '💘',
-                message: 'รู้มั้ย… ฉันจะบอกอะไร 🤫<br>' +
-                    'มาใกล้ๆ หน่อยสิ...<br>' +
-                    'ใกล้อีก...<br>' +
-                    '<strong>จุ๊บบบ!</strong> 😘💕',
-                signature: 'Mwah! 💋',
-                emojiBottom: ['🎉', '😘', '🎉'],
-                bgColor: 'linear-gradient(145deg, #fce4ec 0%, #f8bbd0 100%)',
-                accentColor: '#d81b60'
-            }
-        ];
-
-        const envelope = document.getElementById('envelope');
-        const envelopeWrapper = document.getElementById('envelopeWrapper');
-        const envelopeFront = document.getElementById('envelopeFront');
-        const envelopeBack = document.getElementById('envelopeBack');
-        const btnToggle = document.getElementById('btnToggle');
-        const btnShuffle = document.getElementById('btnShuffle');
-        const bgHearts = document.getElementById('bgHearts');
-        const sparkleBox = document.getElementById('sparkleContainer');
-        const counterText = document.getElementById('counterText');
-
-        // DOM — ส่วนที่จะอัปเดตตามการ์ด
-        const elEnvelopeEmoji = document.getElementById('envelopeEmoji');
-        const elEnvelopeLabel = document.getElementById('envelopeLabel');
-        const elCornerTL = document.getElementById('cornerTL');
-        const elCornerTR = document.getElementById('cornerTR');
-        const elCornerBL = document.getElementById('cornerBL');
-        const elCornerBR = document.getElementById('cornerBR');
-        const elCardEmojiTop = document.getElementById('cardEmojiTop');
-        const elCardTitle = document.getElementById('cardTitle');
-        const elCardDivider = document.getElementById('cardDivider');
-        const elCardMessage = document.getElementById('cardMessage');
-        const elCardSignature = document.getElementById('cardSignature');
-        const elCardEmojiBtm = document.getElementById('cardEmojiBottom');
-
-        let isOpened = false;     // สถานะเปิด/ปิด
-        let currentIndex = 0;        // การ์ดปัจจุบัน
-        let usedIndexes = [];       // เก็บลำดับที่สุ่มแล้ว (ไม่ซ้ำ)
-
-        // สร้างลำดับสุ่มใหม่ (Fisher-Yates Shuffle)
-        function generateShuffleOrder() {
-            const arr = [];
-            for (let i = 0; i < cardCollection.length; i++) {
-                arr.push(i);
-            }
-            // สลับตำแหน่ง
-            for (let i = arr.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [arr[i], arr[j]] = [arr[j], arr[i]];
-            }
-            return arr;
-        }
-
-        // สุ่มการ์ดถัดไป
-        function getNextCardIndex() {
-            // ถ้าหมดแล้ว → สร้างลำดับใหม่
-            if (usedIndexes.length === 0) {
-                usedIndexes = generateShuffleOrder();
-            }
-            return usedIndexes.pop();
-        }
-
-        function applyCardData(index) {
-            const card = cardCollection[index];
-            currentIndex = index;
-
-            // --- ด้านหน้าซอง ---
-            elEnvelopeEmoji.textContent = card.envelopeEmoji;
-            elEnvelopeLabel.textContent = card.envelopeLabel;
-            elCornerTL.textContent = card.corners[0];
-            elCornerTR.textContent = card.corners[1];
-            elCornerBL.textContent = card.corners[2];
-            elCornerBR.textContent = card.corners[3];
-
-            // --- ด้านในการ์ด ---
-            elCardEmojiTop.textContent = card.emojiTop;
-            elCardTitle.textContent = card.title;
-            elCardDivider.textContent = card.divider;
-            elCardMessage.innerHTML = card.message;
-            elCardSignature.textContent = card.signature;
-
-            // อีโมจิด้านล่าง
-            elCardEmojiBtm.innerHTML = card.emojiBottom
-                .map(e => '<span>' + e + '</span>')
-                .join('');
-
-            // --- สีพื้นหลังการ์ด ---
-            if (card.bgColor) {
-                envelopeBack.style.background = card.bgColor;
-            } else {
-                envelopeBack.style.background = '#ffffff';
-            }
-
-            // --- สีเน้น (accent) ---
-            if (card.accentColor) {
-                elCardTitle.style.color = card.accentColor;
-                elEnvelopeLabel.style.color = card.accentColor;
-            } else {
-                elCardTitle.style.color = '';
-                elEnvelopeLabel.style.color = '';
-            }
-
-            // อัปเดตตัวนับ
-            counterText.textContent = 'การ์ด ' + (index + 1) + ' / ' + cardCollection.length;
-        }
-
-        function toggleCard() {
-            isOpened = !isOpened;
-
-            if (isOpened) {
-                // เปิดการ์ด
-                envelope.classList.add('opened');
-                btnToggle.querySelector('.btn-text').textContent = 'ปิดการ์ด';
-                btnToggle.querySelector('.btn-icon').textContent = '💝';
-
-                // เอฟเฟกต์ประกายและหัวใจตกลงมา
-                setTimeout(function () {
-                    createSparkles();
-                    createConfettiHearts();
-                }, 400);
-
-            } else {
-                // ปิดการ์ด
-                envelope.classList.remove('opened');
-                btnToggle.querySelector('.btn-text').textContent = 'เปิดการ์ด';
-                btnToggle.querySelector('.btn-icon').textContent = '💌';
-            }
-        }
-
-        function shuffleCard() {
-            // ถ้าการ์ดเปิดอยู่ → ปิดก่อน
-            if (isOpened) {
-                isOpened = false;
-                envelope.classList.remove('opened');
-                btnToggle.querySelector('.btn-text').textContent = 'เปิดการ์ด';
-                btnToggle.querySelector('.btn-icon').textContent = '💌';
-            }
-
-            // Animation สั่น (shake)
-            envelopeWrapper.classList.add('shake');
-
-            setTimeout(function () {
-                // สุ่มการ์ดใหม่
-                const nextIndex = getNextCardIndex();
-                applyCardData(nextIndex);
-
-                // ลบ animation shake
-                envelopeWrapper.classList.remove('shake');
-
-                // เพิ่ม animation pop-in
-                envelopeWrapper.classList.add('pop-in');
-                setTimeout(function () {
-                    envelopeWrapper.classList.remove('pop-in');
-                }, 500);
-
-            }, 400);
-        }
-
-
-        function createBgHearts() {
-            const heartEmojis = ['❤️', '💕', '💖', '💗', '💓', '🩷', '🤍', '🩵'];
-            const count = 20;
-
-            for (let i = 0; i < count; i++) {
-                const heart = document.createElement('span');
-                heart.className = 'heart';
-                heart.textContent = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
-
-                // ตำแหน่งและความเร็วสุ่ม
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.fontSize = (Math.random() * 1.2 + 0.6) + 'rem';
-                heart.style.animationDuration = (Math.random() * 8 + 8) + 's';
-                heart.style.animationDelay = (Math.random() * 10) + 's';
-
-                bgHearts.appendChild(heart);
-            }
-        }
-
-        function createSparkles() {
-            const sparkles = ['✨', '💫', '⭐', '🌟', '💖'];
-            const count = 15;
-
-            for (let i = 0; i < count; i++) {
-                const sparkle = document.createElement('span');
-                sparkle.className = 'sparkle';
-                sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
-
-                // ตำแหน่งเริ่มต้น (กลางจอ)
-                const centerX = window.innerWidth / 2;
-                const centerY = window.innerHeight / 2;
-
-                sparkle.style.left = centerX + 'px';
-                sparkle.style.top = centerY + 'px';
-
-                // ทิศทางกระจาย
-                const angle = (Math.PI * 2 / count) * i;
-                const dist = Math.random() * 200 + 100;
-                const tx = Math.cos(angle) * dist;
-                const ty = Math.sin(angle) * dist;
-
-                sparkle.style.setProperty('--tx', tx + 'px');
-                sparkle.style.setProperty('--ty', ty + 'px');
-
-                sparkleBox.appendChild(sparkle);
-
-                // ลบออกหลัง animation จบ
-                setTimeout(function () { sparkle.remove(); }, 1500);
-            }
-        }
-
-        function createConfettiHearts() {
-            const hearts = ['❤️', '💕', '💖', '💗', '🩷', '🤍', '💜', '🧡'];
-            const count = 25;
-
-            for (let i = 0; i < count; i++) {
-                const heart = document.createElement('span');
-                heart.className = 'confetti-heart';
-                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-
-                // ตำแหน่งและเวลาสุ่ม
-                heart.style.left = Math.random() * 100 + '%';
-                heart.style.fontSize = (Math.random() * 1 + 0.8) + 'rem';
-                heart.style.animationDuration = (Math.random() * 2 + 2) + 's';
-                heart.style.animationDelay = (Math.random() * 1) + 's';
-
-                document.body.appendChild(heart);
-
-                // ลบออกหลัง animation จบ
-                setTimeout(function () { heart.remove(); }, 4000);
-            }
-        }
-
-        // กดซองจดหมายเพื่อเปิด/ปิด
-        envelopeWrapper.addEventListener('click', toggleCard);
-
-        // กดปุ่มเปิด/ปิด
-        btnToggle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            toggleCard();
-        });
-
-        // กดปุ่มสุ่มการ์ดใหม่
-        btnShuffle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            shuffleCard();
-        });
-
-        createBgHearts();
-
-        // สุ่มการ์ดแรกตอนโหลด
-        const firstIndex = getNextCardIndex();
-        applyCardData(firstIndex);
-
-    </script>
+    <script src="script.js" defer></script>
 
 </body>
 
